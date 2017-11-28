@@ -14,23 +14,13 @@
       android:src="@mipmap/ic_launcher" />
 
   <TextView
-      android:id="@+id/txt3_1"
+      android:id="@+id/txt1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@+id/img3"
       android:layout_marginLeft="50dp"
       android:layout_marginTop="20dp"
-      android:text=""
-      android:textColor="#000"
-      android:textSize="20sp" />
-
-  <TextView
-      android:id="@+id/txt3_2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/txt3_1"
-      android:layout_marginLeft="50dp"
-      android:text=""
+      android:text="ini text deskripsi"
       android:textColor="#000"
       android:textSize="20sp" />
 
@@ -39,22 +29,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_alignParentRight="true"
-      android:layout_below="@+id/txt3_2"
-      android:text="" />
-
-  <EditText
-      android:id="@+id/edt3"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/btn3_1"
-      android:hint="or type your email address" />
-
-  <Button
-      android:id="@+id/btn3_2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentRight="true"
-      android:layout_below="@+id/edt3"
+      android:layout_below="@+id/txt1"
       android:text="" />
 
   <TextView
