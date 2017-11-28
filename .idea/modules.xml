@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AdaHealty2.iml" filepath="$PROJECT_DIR$/AdaHealty2.iml" />
+      <module fileurl="file://A:\Project\Health\AdaHealty2.iml" filepath="A:\Project\Health\AdaHealty2.iml" />
+      <module fileurl="file://D:\My-First-GitLab\AdaHealty2\.idea\Health.iml" filepath="D:\My-First-GitLab\AdaHealty2\.idea\Health.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://A:\Project\Health\app\app.iml" filepath="A:\Project\Health\app\app.iml" />
     </modules>
   </component>
 </project>
