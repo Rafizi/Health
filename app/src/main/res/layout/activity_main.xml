@@ -6,39 +6,38 @@
     android:layout_height="match_parent"
     tools:context="com.example.user.adahealty.MainActivity">
 
-  <ImageView
-      android:id="@+id/img3"
-      android:layout_width="100dp"
-      android:layout_height="100dp"
-      android:layout_centerVertical="true"
-      android:src="@mipmap/ic_launcher" />
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher" />
 
-  <TextView
-      android:id="@+id/txt1"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/img3"
-      android:layout_marginLeft="50dp"
-      android:layout_marginTop="20dp"
-      android:text="ini text deskripsi"
-      android:textColor="#000"
-      android:textSize="20sp" />
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img3"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="ini text deskripsi"
+        android:textColor="#000"
+        android:textSize="20sp" />
 
-  <Button
-      android:id="@+id/btn3_1"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentRight="true"
-      android:layout_below="@+id/txt1"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt1" />
 
-      android:text="" />
-
-  <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignParentBottom="true"
-      android:text="ada"
-      android:textSize="25sp"
-      android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txtada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/rvbutton"
+        android:text="ada"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
  */
 
 public class AdaAdapter extends RecyclerView.Adapter<AdaAdapter.ViewHolder>{
+
     @Override
     public AdaAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return null;
