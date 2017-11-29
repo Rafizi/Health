@@ -13,22 +13,12 @@
         android:layout_centerVertical="true"
         android:src="@mipmap/ic_launcher" />
 
-    <TextView
-        android:id="@+id/txt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/img3"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
-        android:text="ini text deskripsi"
-        android:textColor="#000"
-        android:textSize="20sp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt1" />
+        android:layout_below="@+id/img3" />
 
     <TextView
         android:id="@+id/txtada"

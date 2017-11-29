@@ -2,6 +2,17 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="ini text deskripsi"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/btnYes"
         android:layout_width="wrap_content"
@@ -12,6 +23,7 @@
         android:id="@+id/btnNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txt1"/>
 
 </RelativeLayout>
