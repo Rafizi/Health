@@ -1,12 +1,14 @@
 package com.example.user.adahealty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,29 +23,26 @@ import java.util.List;
  * Created by Asus on 11/28/2017.
  */
 
-public class AdaAdapter extends RecyclerView.Adapter<AdaAdapter.ViewHolder>{
+public class AdaAdapter extends RecyclerView.Adapter<AdaAdapter.ViewHolder> {
+    public ArrayList<AdaObject> ListadaObject;
+    private int id ;
+    private Context c;
 
-    private final Context mcontext;
-
-    DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
-
-    private List<AdaObject>ListadaObject = new ArrayList<>();
-
-    String Key;
-
-    public AdaAdapter(Context context){
-        mcontext = context;
+    public AdaAdapter(ArrayList<AdaObject> value,int id,Context c) {
+        this.ListadaObject = value;
+        this.id = id;
+        this.c = c;
     }
 
-    public void refil(List<AdaObject> adaObject){
-        adaObject.clear();
-        adaObject.addAll(adaObject);
+
+    public void refil(AdaObject adaObject) {
+        ListadaObject.add(adaObject);
         notifyDataSetChanged();
     }
 
     @Override
     public AdaAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
         return new ViewHolder(v);
     }
 
@@ -52,31 +51,15 @@ public class AdaAdapter extends RecyclerView.Adapter<AdaAdapter.ViewHolder>{
 
         final AdaObject adaObject = ListadaObject.get(position);
 
-        holder.txtQuestion.setText(adaObject.getQuestion());
-        holder.btnYes.setText(adaObject.getAnswer());
-        holder.btnYes.setOnClickListener(new View.OnClickListener() {
+        Toast.makeText(c, ""+adaObject.getID(), Toast.LENGTH_SHORT).show();
+
+        holder.button.setText(adaObject.getAnswer());
+        holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseReference.child("ada").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                            AdaObject adaTemp = snapshot.getValue(AdaObject.class);
-                            if (adaObject.getQuestion().equals(adaTemp.getQuestion())){
-
-                                ListadaObject.add(dataSnapshot.getValue(AdaObject.class));
-
-                                String data = dataSnapshot.getKey();
-
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
+                Intent i = new Intent(view.getContext(), MainActivity.class);
+                i.putExtra("id", adaObject.getID()+id);
+                view.getContext().startActivity(i);
             }
         });
 
@@ -84,20 +67,18 @@ public class AdaAdapter extends RecyclerView.Adapter<AdaAdapter.ViewHolder>{
 
     @Override
     public int getItemCount() {
-        return 0;
+        return ListadaObject.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        Button btnYes,btnNo;
-        TextView txtQuestion;
+        Button button;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
+            button = (Button) itemView.findViewById(R.id.btnYes);
 
-            btnNo = (Button)itemView.findViewById(R.id.btnNo);
-            btnYes= (Button)itemView.findViewById(R.id.btnYes);
-            txtQuestion = (TextView) itemView.findViewById(R.id.txtQuestion);
 
         }
     }

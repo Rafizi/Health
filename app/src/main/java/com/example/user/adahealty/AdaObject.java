@@ -6,8 +6,14 @@ package com.example.user.adahealty;
 
 public class AdaObject {
     int ID;
-    String question;
     String answer;
+
+    @Override
+    public String toString() {
+        return "AdaObject{" +
+                ", answer='" + answer + '\'' +
+                '}';
+    }
 
     public String getAnswer() {
         return answer;
@@ -25,17 +31,10 @@ public class AdaObject {
         this.ID = ID;
     }
 
-    public String getQuestion() {
-        return question;
-    }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public AdaObject(int ID, String question,String answer) {
+    public AdaObject(int ID,  String answer) {
         this.ID = ID;
-        this.question = question;
+
         this.answer = answer;
     }
 }
