@@ -52,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
         setAnim();
 
-
-        Toast.makeText(this, "i"+i, Toast.LENGTH_SHORT).show();
-
         databaseReference.child("ada").child(String.valueOf(i)).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -98,5 +95,4 @@ public class MainActivity extends AppCompatActivity {
         txtdeskripsi.setAnimation(animation_card_in);
         txtQues.setAnimation(animation_card_in);
     }
-
 }

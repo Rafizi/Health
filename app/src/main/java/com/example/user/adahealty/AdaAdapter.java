@@ -51,8 +51,6 @@ public class AdaAdapter extends RecyclerView.Adapter<AdaAdapter.ViewHolder> {
 
         final AdaObject adaObject = ListadaObject.get(position);
 
-        Toast.makeText(c, ""+adaObject.getID(), Toast.LENGTH_SHORT).show();
-
         holder.button.setText(adaObject.getAnswer());
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
