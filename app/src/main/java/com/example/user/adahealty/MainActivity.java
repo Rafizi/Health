@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         rvbutton = (RecyclerView) findViewById(R.id.rvbutton);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         rvbutton.setLayoutManager(layoutManager);
+
+
+
+
         if (getIntent().getExtras()!= null){
             i = getIntent().getIntExtra("id",0);
         }
@@ -43,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         txtdeskripsi = (TextView) findViewById(R.id.txtada);
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        setAnim();
 
 
         Toast.makeText(this, "i"+i, Toast.LENGTH_SHORT).show();
@@ -82,4 +90,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void setAnim(){
+        Animation animation_card_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_card_in);
+        Animation animation_fade_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_fade_in);
+        rvbutton.setAnimation(animation_fade_in);
+        txtdeskripsi.setAnimation(animation_card_in);
+        txtQues.setAnimation(animation_card_in);
+    }
+
 }
