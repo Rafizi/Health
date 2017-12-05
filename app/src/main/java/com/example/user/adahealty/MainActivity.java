@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvbutton;
     AdaAdapter adaAdapter;
     TextView txtdeskripsi, txtQues;
+    ImageView img;
     DatabaseReference databaseReference;
     int i = 0;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         //insisalisasi
         txtQues = (TextView) findViewById(R.id.txtQues);
         rvbutton = (RecyclerView) findViewById(R.id.rvbutton);
+        img = (ImageView)findViewById(R.id.img3);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         rvbutton.setLayoutManager(layoutManager);
 
@@ -89,10 +92,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setAnim(){
-        Animation animation_card_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_card_in);
+        Animation animation_card_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_fade_in);
         Animation animation_fade_in = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.anim_fade_in);
         rvbutton.setAnimation(animation_fade_in);
         txtdeskripsi.setAnimation(animation_card_in);
         txtQues.setAnimation(animation_card_in);
+        img.setAnimation(animation_card_in);
+
     }
 }
